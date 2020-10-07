@@ -1,11 +1,6 @@
 # The deployment section should be excluded until
 # it is explicitly included in module 5
 
-#deployment:
-#  dockerhub:
-#    branch: master
-#    commands:
-#      - $DOCKER_HUB_TRIGGER
 orbs: # declare what orbs we are going to use
   node: circleci/node@2.0.2 # the node orb provides common node-related configuration 
 
@@ -15,4 +10,9 @@ workflows:
   app-tests:
     jobs:
       - node/test
- 
+
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - $DOCKER_HUB_TRIGGER
