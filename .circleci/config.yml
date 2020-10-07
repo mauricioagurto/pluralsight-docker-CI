@@ -14,6 +14,5 @@ version: 2.1 # using 2.1 provides access to orbs and other features
 workflows:
   app-tests:
     jobs:
-      - node/test
-    override:    
-      - mocha
+      - test
+ 
