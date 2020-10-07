@@ -1,13 +1,7 @@
-# The deployment section should be excluded until
-# it is explicitly included in module 5
-
-#deployment:
-#  dockerhub:
-#    branch: master
-#    commands:
-#      - $DOCKER_HUB_TRIGGER
-jobs:
-
-test:
-  override:    
-    - mocha
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+workflows:
+  node-tests:
+    jobs:
+      - node/test
